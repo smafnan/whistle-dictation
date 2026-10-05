@@ -1,0 +1,12 @@
+{
+  "hotkey": "Ctrl+Alt+Shift+Space",
+  "language": "en",
+  "microphone": null,
+  "max_record_seconds": 300,
+  "cleanup": true,
+  "terminal_punctuation": false,
+  "trailing_space": true,
+  "keywords": ["Whistle", "Cactus", "Meetily"],
+  "replacements": {},
+  "inference_timeout_seconds": 180
+}

@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a reproducible dictation, startup, or text-delivery problem.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Please use synthetic examples. Do not attach private speech, transcripts, credentials, or personal settings."
+  - type: input
+    id: version
+    attributes:
+      label: Application version
+      placeholder: "v0.1.0; portable build or source checkout"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Windows and target application
+      placeholder: "Windows build, architecture, textbox application/version"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "Describe microphone/shortcut settings and the steps leading to the issue."
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Relevant diagnostics
+      description: "Include the app status or sanitized metadata-only log excerpt. Review it before posting."

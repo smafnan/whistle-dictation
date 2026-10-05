@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whistle-dictation"
+version = "0.1.0"
+description = "Local Windows hotkey dictation with Cactus Whistle"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "cactus-needle[mic]==3.1.0",
+  "PySide6>=6.8,<7",
+  "numpy>=2,<3",
+  "sounddevice>=0.5,<0.6",
+  "soxr>=0.5,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1", "pyinstaller>=6.11,<7"]
+
+[project.urls]
+Homepage = "https://github.com/smafnan/whistle-dictation"
+Documentation = "https://github.com/smafnan/whistle-dictation/tree/main/docs"
+Issues = "https://github.com/smafnan/whistle-dictation/issues"
+Releases = "https://github.com/smafnan/whistle-dictation/releases"
+
+[project.scripts]
+whistle-dictation = "whistle_dictation.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["integration: requires the downloaded Whistle runtime"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]
